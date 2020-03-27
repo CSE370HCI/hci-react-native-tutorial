@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    {% seo %}
+
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <a href="{{ site.github.url }}">
+          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        </a>
+        <p>{{ site.description | default: site.github.project_tagline }}</p>
+
+        {% if site.github.is_user_page %}
+        <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
+        {% endif %}
+
+        <h3>Getting Started</h3>
+        <a href="index.html">Part 1</a>
+        <br>
+        <a href="part2.html">Part 2</a>
+        <br>
+        <a href="part3.html">Part 3</a>
+        <br>
+        <a href="part4.html">Part 4</a>
+        <br>
+        <a href="part5.html">Part 5</a>
+        <br>
+        <a href="part6.html">Part 6</a>
+        <br>
+        <a href="conclusion.html">Conclusion</a>
+        <br>
+        <br>
+        <h3>Additional Resources</h3>
+        <a href="https://reactnative.dev/docs/getting-started" target="_blank">React Native Documentation</a>
+        <br>
+        <a href="https://docs.expo.io/versions/latest/react-native/tutorial/" target="_blank">Expo's React Native
+          Tutorial</a>
+        <br>
+      </header>
+      <section>
+
+        {{ content }}
+
+      </section>
+      <footer>
+      </footer>
+    </div>
+    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88838318-6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-88838318-6');
+    </script>
+
+  </body>
+</html>
