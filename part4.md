@@ -66,7 +66,9 @@ export default class App extends React.Component {
                   name="Login"
                   component={LoginScreen}
                   initialParams={{
-                    onLoggedIn: () => this.checkIfLoggedIn()
+                    onLoggedIn: () => {
+                      this.checkIfLoggedIn();
+                    }
                   }}
                 />
               )}
