@@ -1,37 +1,31 @@
-## Welcome to GitHub Pages
+# Part 1
+## Creating a new project
 
-You can use the [editor on GitHub](https://github.com/TristanWiley/hci-react-native-tutorial/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+**React Native** is a powerful framework that lets us create cross platform mobile applications using React concepts. **Expo** is a set of tools and services built around React Native to assist in developing and deploying React Native applications onto Android, iOS, and even the web.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+In this first part of the tutorial we will be using Expo to create a new application, then we will preview it on our mobile device as well as in the browser. *For your final project in CSE 370, you will not need your React Native application working in the browser, this is purely for demo purposes.*
 
-### Markdown
+### Lets get started
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+First we'll need to start by compiling our dependencies and requirements. In your command line, use `npm` to install the `expo-cli` onto your machine. This will allow you to make, control, and deploy your mobile app. You can install `expo-cli` by running the following command.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+npm install -g expo-cli
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Once installed, navigate to where you would like to create your app, then run the following command to initialize a new project:
 
-### Jekyll Themes
+```
+expo init YourProjectName --npm
+```
+> The `--npm` flag ensures we're using the Node Package Manager to install files. By default it uses `yarn` which we are not using for this tutorial.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/TristanWiley/hci-react-native-tutorial/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+When prompted, use the arrow keys in your terminal to select the `tabs` template, press enter to confirm.
 
-### Support or Contact
+![Screenshot of Expo Init](/assets/expo_init_screenshot.jpg)
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+> This template will allow us to create an application with an existing navigation setup. It will also default to a bottom tab navigation system, however you are free to change this if you think something else would suit your app more.
+
+Wait for the process to complete, then navigate to the new project folder by typing `cd YourProjectName` and running `npm start`. In a browser window, a control panel will open up that will give you a few options.
+
+[Continue to Part 2 ->](part2.html)
