@@ -23,10 +23,27 @@ export default class LoginScreen extends React.Component {
 
     console.log(props)
   }
+  // On our button press, attempt to login
+  // this could use some error handling!
   onSubmit = () => {
-    // enter login logic here
-    SecureStore.setItemAsync('session', "something").then(() => {
-      this.props.route.params.onLoggedIn();
+    const { email, password } = this.state
+
+    fetch("http://stark.cse.buffalo.edu/hci/SocialAuth.php", {
+      method: "POST",
+      body: JSON.stringify({
+        action: "login",
+        username: email,
+        password
+      })
+    })
+    .then(response => response.json())
+    .then(json => {
+      console.log(`Logging in with session token: ${json.user.session_token}`)
+
+      // enter login logic here
+      SecureStore.setItemAsync('session', json.user.session_token).then(() => {
+        this.props.route.params.onLoggedIn();
+      })
     })
   }
   render() {
