@@ -49,10 +49,12 @@ Before the closing `</BottomTab.Navigator>` tag, add the following code.
 <BottomTab.Screen
   name="ExampleScreen"
   component={ExampleScreen}
-  options={{
-    title: 'Example Title',
-    tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-trophy" />,
-  }}
+  options={
+    {
+      title: 'Example Title',
+      tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-trophy" />,
+    }
+  }
 />
 ```
 > You can find a list of icons available at [https://expo.github.io/vector-icons/](https://expo.github.io/vector-icons/)
