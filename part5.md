@@ -28,20 +28,19 @@ export default class LoginScreen extends React.Component {
   onSubmit = () => {
     const { email, password } = this.state
 
-    fetch("http://stark.cse.buffalo.edu/hci/SocialAuth.php", {
+    fetch("https://webdev.cse.buffalo.edu/hci/TEAM/api/api/auth/login", {
       method: "POST",
       body: JSON.stringify({
-        action: "login",
-        username: email,
+        email: "myemail@buffalo.edu",
         password
       })
     })
     .then(response => response.json())
     .then(json => {
-      console.log(`Logging in with session token: ${json.user.session_token}`)
+      console.log(`Logging in with session token: ${json.token}`)
 
       // enter login logic here
-      SecureStore.setItemAsync('session', json.user.session_token).then(() => {
+      SecureStore.setItemAsync('session', json.token).then(() => {
         this.props.route.params.onLoggedIn();
       })
     })
