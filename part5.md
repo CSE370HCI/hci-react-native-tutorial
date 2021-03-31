@@ -20,29 +20,34 @@ export default class LoginScreen extends React.Component {
       email: '',
       password: ''
     }
-
-    console.log(props)
   }
   // On our button press, attempt to login
   // this could use some error handling!
   onSubmit = () => {
-    const { email, password } = this.state
+    const { email, password } = this.state;
 
-    fetch("https://webdev.cse.buffalo.edu/hci/TEAM/api/api/auth/login", {
+    fetch("https://webdev.cse.buffalo.edu/hci/<TEAM-NAME>/api/api/auth/login", {
       method: "POST",
+      headers: new Headers({
+          'Content-Type': 'application/json'
+      }),
       body: JSON.stringify({
-        email: "myemail@buffalo.edu",
+        email,
         password
       })
     })
     .then(response => response.json())
     .then(json => {
-      console.log(`Logging in with session token: ${json.token}`)
+      console.log(`Logging in with session token: ${json.token}`);
 
       // enter login logic here
       SecureStore.setItemAsync('session', json.token).then(() => {
         this.props.route.params.onLoggedIn();
-      })
+      });
+    })
+    .catch(exception => {
+        console.log("Error occured", exception);
+        // Do something when login fails
     })
   }
   render() {
@@ -99,6 +104,8 @@ const styles = StyleSheet.create({
 });
 ```
 > Aside from the different stylesheet we discussed last part, this should look very similar to React code you've written before!
+
+> Make sure to update the login API route in the onSubmit method to your project's API route!
 
 The only differences in our component here, compared to our component in pure React, is the names of the components we use! Rather tha `<p>` or `<input>` components, we use `<Text>` and `<TextInput>` components.
 

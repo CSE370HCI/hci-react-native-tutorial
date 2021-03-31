@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
 });
 
 ```
+> This code may not work right away, that's okay! Keep reading and we'll fix it on the next page :)
 
 There's a lot of code here, but it's fairly simple once we break it down. The first chunk of code is just importing different components and tools to help us with our app and navigation. When we get to the line starting with `const Stack =`, this is creating a new stack based navigation system.
 

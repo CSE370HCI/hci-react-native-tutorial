@@ -1,7 +1,7 @@
 # Part 2
 ## Testing the sample
 
-Expo has created us a sample project with a few basic screens and a navigation system. We can now view this on our mobile device, in a browser, or in an emulator. In the last section we ran `expo start` and should now see a screen like the following:
+This sample project has a basic page for login and a navigation system. We can now view this on our mobile device, in a browser, or in an emulator. In the last section we ran `expo start` and should now see a screen like the following:
 
 ![Expo Dashboard](/assets/expo_dashboard.jpg)
 

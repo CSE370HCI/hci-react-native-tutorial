@@ -13,19 +13,14 @@ First we'll need to start by compiling our dependencies and requirements. In you
 npm install -g expo-cli
 ```
 
-Once installed, navigate to where you would like to create your app, then run the following command to initialize a new project:
+Once installed, navigate to where you would like to create your app, then run the following command to clone our [template code](https://github.com/CSE410HCI/react-native-template):
 
 ```
-expo init YourProjectName --npm
+git clone https://github.com/CSE410HCI/react-native-template.git
 ```
-> The `--npm` flag ensures we're using the Node Package Manager to install files. By default it uses `yarn` which we are not using for this tutorial.
 
-When prompted, use the arrow keys in your terminal to select the `tabs` template, press enter to confirm.
+> This code is based off of an existing Expo boilerplate, modified with extra pages to help with your project
 
-![Screenshot of Expo Init](/assets/expo_init_screenshot.jpg)
-
-> This template will allow us to create an application with an existing navigation setup. It will also default to a bottom tab navigation system, however you are free to change this if you think something else would suit your app more.
-
-Wait for the process to complete, then navigate to the new project folder by typing `cd YourProjectName` and running `npm start`. In a browser window, a control panel will open up that will give you a few options.
+Wait for the process to complete, then navigate to the new project and start it by running `npm start`. In a browser window, a control panel will open up that will give you a few options.
 
 [Continue to Part 2 ->](part2.html)
